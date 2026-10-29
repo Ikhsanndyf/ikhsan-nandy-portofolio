@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Ikhsan Nandy – Portfolio</title>
+  <title>Ikhsan Nandy – Portofolio</title>
 
   <!-- Google Fonts, Remix Icon & AOS CDN -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,800;1,300&display=swap">
@@ -57,7 +57,7 @@
               <i class="ri-mail-send-line"></i> Contact Me
             </a>
             <a class="btn" href="#galeri " data-scroll-link>
-              <i class="ri-image-2-line"></i> Lihat Galeri <i class="ri-arrow-down-line"></i>
+              <i class="ri-image-2-line"></i> Lihat Galeri
             </a>
           </div>
           <!-- <a class="mail" href="mailto:ikhsannandyf05@gmail.com">
@@ -275,11 +275,16 @@
       <button class="btn x" id="modalCloseButton" aria-label="Tutup">
         <i class="ri-close-line"></i>
       </button>
-      <button class="btn nv pv" id="modalPrevButton" aria-label="Sebelumnya">
-        <i class="ri-arrow-left-s-line"></i>
-      </button>
-      <div class="modal-img-wrap" id="modalImageViewport">
-        <img id="modalPreviewImage" alt="" draggable="false">
+      <div class="modal-stage">
+        <button class="btn nv pv" id="modalPrevButton" aria-label="Sebelumnya">
+          <i class="ri-arrow-left-s-line"></i>
+        </button>
+        <div class="modal-img-wrap" id="modalImageViewport">
+          <img id="modalPreviewImage" alt="" draggable="false">
+        </div>
+        <button class="btn nv nx" id="modalNextButton" aria-label="Berikutnya">
+          <i class="ri-arrow-right-s-line"></i>
+        </button>
       </div>
       <div class="modal-zoom-bar" id="modalZoomControls" aria-label="Kontrol perbesaran sertifikat">
         <button type="button" class="btn sm zoom-btn" id="zoomOutButton" aria-label="Perkecil" title="Perkecil (-)">
@@ -294,13 +299,9 @@
         </button>
       </div>
       <div class="modal-meta">
-        <span class="modal-counter" id="modalSlideCounter"></span>
         <p id="modalPreviewCaption"></p>
       </div>
       <div class="modal-thumbs" id="modalThumbnails"></div>
-      <button class="btn nv nx" id="modalNextButton" aria-label="Berikutnya">
-        <i class="ri-arrow-right-s-line"></i>
-      </button>
     </div>
   </div>
 

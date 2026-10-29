@@ -1013,8 +1013,17 @@ footer {
   gap: 10px;
 }
 
+.modal-stage {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .modal-img-wrap {
   position: relative;
+  z-index: 1;
   width: 100%;
   max-height: 58vh;
   margin: 0 auto;
@@ -1026,15 +1035,16 @@ footer {
   border-radius: 12px;
   background: #fff;
   user-select: none;
+  touch-action: pan-y;
 }
 
 .modal-img-wrap.zoomable {
   cursor: zoom-in;
-  touch-action: none;
 }
 
 .modal-img-wrap.zoomable.is-zoomed {
   cursor: grab;
+  touch-action: none;
 }
 
 .modal-img-wrap.zoomable.is-dragging {
@@ -1103,20 +1113,6 @@ footer {
   gap: 10px;
 }
 
-.modal-counter {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 3px 12px;
-  font-size: 0.8rem;
-  font-weight: 800;
-  background: var(--yellow);
-  color: #111;
-  border: 2.5px solid var(--ink);
-  border-radius: 999px;
-  box-shadow: 2px 2px 0 var(--ink);
-}
-
 .box p {
   font-weight: 800;
   text-align: center;
@@ -1167,6 +1163,7 @@ footer {
   position: absolute;
   top: -16px;
   right: -12px;
+  z-index: 30;
   width: 42px;
   height: 42px;
   padding: 0;
@@ -1177,7 +1174,9 @@ footer {
 
 .nv {
   position: absolute;
-  top: 44%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
   width: 42px;
   height: 42px;
   padding: 0;
@@ -1186,12 +1185,28 @@ footer {
   color: #111;
 }
 
+.nv:hover {
+  transform: translate(2px, calc(-50% + 2px));
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.nv:active {
+  transform: translate(4px, calc(-50% + 4px));
+  box-shadow: 0 0 0 var(--ink);
+}
+
 .pv {
-  left: -14px;
+  left: -20px;
 }
 
 .nx {
-  right: -14px;
+  right: -20px;
+}
+
+@media (max-width: 760px) {
+  .nv {
+    display: none !important;
+  }
 }
 
 /* ==========================================

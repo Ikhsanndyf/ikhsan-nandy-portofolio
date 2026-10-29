@@ -740,7 +740,7 @@ const buildGaleriModalSlides = (groupIndex) => {
   const galeriItem = GALERI_DATA[groupIndex];
   const images = getItemImages(galeriItem);
   return images.map((src, imgIdx) => ({
-    title: images.length > 1 ? `${galeriItem.title} (Foto ${imgIdx + 1})` : galeriItem.title,
+    title: galeriItem.title,
     imageSrc: src,
     fallbackSrc: createImagePlaceholder(groupIndex + imgIdx, `${galeriItem.title} #${imgIdx + 1}`)
   }));
@@ -788,14 +788,6 @@ function updateModalContent() {
 
   modalViewport.classList.toggle('zoomable', isModalZoomEnabled);
   modalZoomControls.classList.toggle('active', isModalZoomEnabled);
-
-  const counterEl = selectElement('#modalSlideCounter');
-  if (modalItemsList.length > 1) {
-    counterEl.style.display = 'inline-flex';
-    counterEl.innerHTML = `<i class="ri-stack-line"></i> ${currentModalIndex + 1} / ${modalItemsList.length}`;
-  } else {
-    counterEl.style.display = 'none';
-  }
 
   selectElement('#modalPreviewCaption').textContent =
     currentItem.title + (currentItem.organization ? ' – ' + currentItem.organization : '');
@@ -858,47 +850,85 @@ modalViewport.addEventListener('wheel', (event) => {
   setModalZoom(currentZoomScale + delta, event.clientX, event.clientY);
 }, { passive: false });
 
-// Interaksi Drag / Geser (Pan) & Klik untuk Toggle Zoom Sertifikat
+// Interaksi Swipe Slide (saat ukuran normal) & Drag/Pan (saat Sertifikat di-zoom)
+let isSwipingSlide = false;
+let swipeStartX = 0;
+let swipeStartY = 0;
+
 modalViewport.addEventListener('pointerdown', (event) => {
-  if (!isModalZoomEnabled || event.button !== 0) return;
+  if (event.button !== 0) return;
   hasDraggedDuringPointer = false;
 
-  if (currentZoomScale <= 1) return;
+  if (isModalZoomEnabled && currentZoomScale > 1) {
+    isPanningImage = true;
+    isSwipingSlide = false;
+    panStartPointerX = event.clientX;
+    panStartPointerY = event.clientY;
+    panOriginX = panTranslateX;
+    panOriginY = panTranslateY;
+    modalViewport.classList.add('is-dragging');
+    modalViewport.setPointerCapture(event.pointerId);
+    return;
+  }
 
-  isPanningImage = true;
-  panStartPointerX = event.clientX;
-  panStartPointerY = event.clientY;
-  panOriginX = panTranslateX;
-  panOriginY = panTranslateY;
-  modalViewport.classList.add('is-dragging');
-  modalViewport.setPointerCapture(event.pointerId);
+  if (modalItemsList.length > 1) {
+    isSwipingSlide = true;
+    swipeStartX = event.clientX;
+    swipeStartY = event.clientY;
+    modalViewport.setPointerCapture(event.pointerId);
+  }
 });
 
 modalViewport.addEventListener('pointermove', (event) => {
-  if (!isPanningImage) return;
-  const deltaX = event.clientX - panStartPointerX;
-  const deltaY = event.clientY - panStartPointerY;
+  if (isPanningImage) {
+    const deltaX = event.clientX - panStartPointerX;
+    const deltaY = event.clientY - panStartPointerY;
 
-  if (Math.abs(deltaX) > 4 || Math.abs(deltaY) > 4) {
-    hasDraggedDuringPointer = true;
+    if (Math.abs(deltaX) > 4 || Math.abs(deltaY) > 4) {
+      hasDraggedDuringPointer = true;
+    }
+
+    panTranslateX = panOriginX + deltaX;
+    panTranslateY = panOriginY + deltaY;
+    applyZoomTransform();
+    return;
   }
 
-  panTranslateX = panOriginX + deltaX;
-  panTranslateY = panOriginY + deltaY;
-  applyZoomTransform();
+  if (isSwipingSlide) {
+    const deltaX = event.clientX - swipeStartX;
+    const deltaY = event.clientY - swipeStartY;
+    if (Math.abs(deltaX) > 6 || Math.abs(deltaY) > 6) {
+      hasDraggedDuringPointer = true;
+    }
+  }
 });
 
-const stopImagePanning = (event) => {
-  if (!isPanningImage) return;
-  isPanningImage = false;
-  modalViewport.classList.remove('is-dragging');
+const stopImagePointerInteraction = (event) => {
+  if (isPanningImage) {
+    isPanningImage = false;
+    modalViewport.classList.remove('is-dragging');
+  }
+
+  if (isSwipingSlide) {
+    isSwipingSlide = false;
+    if (event.type === 'pointerup' && modalItemsList.length > 1) {
+      const deltaX = event.clientX - swipeStartX;
+      const deltaY = event.clientY - swipeStartY;
+      const SWIPE_THRESHOLD = 40;
+
+      if (Math.abs(deltaX) >= SWIPE_THRESHOLD && Math.abs(deltaX) > Math.abs(deltaY)) {
+        navigateModalSlide(deltaX < 0 ? 1 : -1);
+      }
+    }
+  }
+
   if (event && event.pointerId !== undefined && modalViewport.hasPointerCapture(event.pointerId)) {
     modalViewport.releasePointerCapture(event.pointerId);
   }
 };
 
-modalViewport.addEventListener('pointerup', stopImagePanning);
-modalViewport.addEventListener('pointercancel', stopImagePanning);
+modalViewport.addEventListener('pointerup', stopImagePointerInteraction);
+modalViewport.addEventListener('pointercancel', stopImagePointerInteraction);
 
 modalViewport.addEventListener('click', (event) => {
   if (!isModalZoomEnabled || hasDraggedDuringPointer) {
