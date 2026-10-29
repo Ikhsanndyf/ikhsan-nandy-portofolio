@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Ikhsan Nandy – Portfolio</title>
+
+  <!-- Google Fonts, Remix Icon & AOS CDN -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,800;1,300&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
+  <!-- Stylesheet Utama -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       HEADER & NAVIGASI SECTION
+  =========================================== -->
+  <header>
+    <nav class="nav nb" aria-label="Navigasi utama">
+      <a class="logo" href="#top" data-scroll-link>
+        <i>INF</i>
+        <span>Porto<b>folio</b></span>
+      </a>
+      <div class="links" id="navigationLinks"></div>
+      <button class="btn sm menu" id="mobileMenuButton" aria-expanded="false" aria-controls="mobileMenuPanel">
+        <i class="ri-menu-3-line"></i> MENU
+      </button>
+    </nav>
+    <div class="panel nb" id="mobileMenuPanel"></div>
+  </header>
+
+  <main id="top">
+
+    <!-- ==========================================
+         HERO SECTION
+    =========================================== -->
+    <div class="wrap">
+      <div class="hero">
+        <div data-aos="fade-right">
+          <span class="badge">Open to Work, Internships &amp; Collaborations!</span>
+          <p class="hello">
+            <i class="ri-sparkling-2-fill"></i> hello, my name is
+          </p>
+          <h1>Ikhsan Nandy</h1>
+          <p class="role">
+            <!-- <i class="ri-terminal-box-line"></i> Fresh Graduate / Web Developer &amp; Database Administrator Candidate -->
+            <i class="ri-graduation-cap-line"></i> Fresh Graduate Bachelor of Information Systems
+          </p>
+          <blockquote>
+            “Trust the process, embrace the journey, learn from every failure, and never stop becoming a better version of yourself.”
+          </blockquote>
+          <div class="cta">
+            <a class="btn blue" href="mailto:ikhsannandyf05@gmail.com" target="_blank" rel="noopener">
+              <i class="ri-mail-send-line"></i> Contact Me
+            </a>
+            <a class="btn" href="#galeri " data-scroll-link>
+              <i class="ri-image-2-line"></i> Lihat Galeri <i class="ri-arrow-down-line"></i>
+            </a>
+          </div>
+          <!-- <a class="mail" href="mailto:ikhsannandyf05@gmail.com">
+            <i class="ri-mail-send-line"></i> ikhsannandyf05@gmail.com
+          </a> -->
+        </div>
+
+        <div class="photo" data-aos="zoom-in" data-aos-delay="150">
+          <svg class="star s1" viewBox="0 0 24 24" fill="currentColor" stroke="#111" stroke-width="1.2">
+            <path d="M12 1l2.6 8.4L23 12l-8.4 2.6L12 23l-2.6-8.4L1 12l8.4-2.6z"/>
+          </svg>
+          <button id="heroPhotoButton" aria-label="Perbesar foto profil">
+            <img id="heroProfileImage" src="images/hero/hero-profile.jpg" alt="Foto profil Ikhsan Nandy">
+          </button>
+          <span class="loc">
+            <i class="ri-map-pin-2-fill" style="color:var(--red)"></i> Bogor, Jawa Barat, Indonesia
+          </span>
+          <svg class="star s2" viewBox="0 0 24 24" fill="currentColor" stroke="#111" stroke-width="1.2">
+            <path d="M12 1l2.2 4.6 5-1.2-1.2 5L23 12l-5 2.6 1.2 5-5-1.2L12 23l-2.2-4.6-5 1.2 1.2-5L1 12l5-2.6-1.2-5 5 1.2z"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- ==========================================
+         MARQUEE (RUNNING TEXT) SECTION
+    =========================================== -->
+    <div class="mq" aria-hidden="true">
+      <div id="marqueeContainer"></div>
+    </div>
+
+    <div class="wrap">
+
+      <!-- ==========================================
+           TENTANG SAYA SECTION
+      =========================================== -->
+      <section id="tentang">
+        <h2 class="h" data-aos="fade-right">
+          <i class="ri-user-smile-line"></i> Tentang Saya
+        </h2>
+        <div class="about">
+          <div class="nb" data-aos="fade-up">
+            <p>
+              Saya web developer dengan fokus pada ekosistem PHP modern dan pengelolaan basis data. Saya suka mengubah kebutuhan yang rumit menjadi sistem yang mudah dipakai, mulai dari desain tabel, query, sampai antarmuka.
+            </p>
+            <br>
+            <p>
+              Saat ini saya sedang menyiapkan sertifikasi kompetensi Database Administrator dan mencari kesempatan untuk belajar di tim yang menghargai kode bersih.
+            </p>
+            <div class="cta" style="margin-top:20px">
+              <a class="btn sm blue" href="#kontak" data-scroll-link>
+                <i class="ri-shake-hands-line"></i> Ajak kerja sama
+              </a>
+              <a class="btn sm" href="#proyek" data-scroll-link>
+                <i class="ri-folder-open-line"></i> Lihat proyek
+              </a>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="nb stat" data-aos="zoom-in" data-aos-delay="50">
+              <span class="ico pink"><i class="ri-calendar-check-line"></i></span>
+              <b>3+</b>
+              Tahun belajar
+            </div>
+            <div class="nb stat" data-aos="zoom-in" data-aos-delay="150">
+              <span class="ico yellow"><i class="ri-code-box-line"></i></span>
+              <b>12</b>
+              Proyek
+            </div>
+            <div class="nb stat" data-aos="zoom-in" data-aos-delay="250">
+              <span class="ico blue"><i class="ri-award-line"></i></span>
+              <b>6</b>
+              Sertifikat
+            </div>
+            <div class="nb stat" data-aos="zoom-in" data-aos-delay="350">
+              <span class="ico green"><i class="ri-presentation-line"></i></span>
+              <b>6</b>
+              Pelatihan
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==========================================
+           GALERI / DOKUMENTASI SECTION
+      =========================================== -->
+      <section id="galeri">
+        <h2 class="h" data-aos="fade-right">
+          <i class="ri-camera-lens-line"></i> Dokumentasi / Aktivitas
+        </h2>
+        <div class="grid g3 gal" id="galeriContainer"></div>
+      </section>
+
+      <!-- ==========================================
+           PENGALAMAN SECTION
+      =========================================== -->
+      <section id="pengalaman">
+        <h2 class="h" data-aos="fade-right">
+          <i class="ri-briefcase-4-line"></i> Pengalaman & Organisasi
+        </h2>
+        <div class="tl" id="experienceContainer"></div>
+      </section>
+
+      <!-- ==========================================
+           PENDIDIKAN SECTION
+      =========================================== -->
+      <section id="pendidikan">
+        <h2 class="h" data-aos="fade-right">
+          <i class="ri-graduation-cap-line"></i> Pendidikan
+        </h2>
+        <div class="grid g2" id="educationContainer"></div>
+      </section>
+
+      <!-- ==========================================
+           PELATIHAN SECTION
+      =========================================== -->
+      <section id="pelatihan">
+        <h2 class="h" data-aos="fade-right">
+          <i class="ri-book-open-line"></i> Pelatihan
+        </h2>
+        <div class="flt" id="trainingFilterContainer" data-aos="fade-up"></div>
+        <div class="grid g2" id="trainingContainer"></div>
+      </section>
+
+      <!-- ==========================================
+           KEAHLIAN SECTION
+      =========================================== -->
+      <section id="keahlian">
+        <h2 class="h" data-aos="fade-right">
+          <i class="ri-tools-line"></i> Keahlian
+        </h2>
+        <div class="grid g3" id="skillsContainer"></div>
+      </section>
+
+      <!-- ==========================================
+           SERTIFIKAT SECTION
+      =========================================== -->
+      <section id="sertifikat">
+        <h2 class="h" data-aos="fade-right">
+          <i class="ri-medal-line"></i> Sertifikat
+        </h2>
+        <div class="grid g3" id="certificateContainer"></div>
+        <div class="cert-pagination" id="certificatePagination" aria-label="Navigasi halaman sertifikat"></div>
+      </section>
+
+      <!-- ==========================================
+           PROYEK SECTION
+      =========================================== -->
+      <section id="proyek">
+        <h2 class="h" data-aos="fade-right">
+          <i class="ri-macbook-line"></i> Proyek
+        </h2>
+        <div class="grid g3" id="projectContainer"></div>
+      </section>
+
+      <!-- ==========================================
+           KONTAK SECTION
+      =========================================== -->
+      <section id="kontak">
+        <h2 class="h" data-aos="fade-right">
+          <i class="ri-chat-smile-3-line"></i> Kontak
+        </h2>
+        <div class="nb contact" data-aos="fade-up">
+          <div>
+            <h3 style="font-size:1.6rem;line-height:1.2">
+              Punya ide atau lowongan? Ayo ngobrol.
+            </h3>
+            <p style="margin-top:10px">
+              Balasan biasanya dalam 1 hari kerja.
+            </p>
+            <div class="soc">
+              <a class="btn blue sm" href="https://wa.me/6281234567890" target="_blank" rel="noopener">
+                <i class="ri-whatsapp-line"></i> WhatsApp
+              </a>
+              <a class="btn sm" href="mailto:sandi@example.com">
+                <i class="ri-mail-line"></i> Email
+              </a>
+              <a class="btn sm" href="#" aria-label="GitHub">
+                <i class="ri-github-fill"></i> GitHub
+              </a>
+              <a class="btn sm" href="#" aria-label="LinkedIn">
+                <i class="ri-linkedin-box-fill"></i> LinkedIn
+              </a>
+            </div>
+          </div>
+
+          <form id="contactForm">
+            <input required placeholder="Nama" aria-label="Nama">
+            <input required type="email" placeholder="Email" aria-label="Email">
+            <textarea required rows="4" placeholder="Pesan" aria-label="Pesan"></textarea>
+            <button class="btn blue" type="submit">
+              <i class="ri-send-plane-fill"></i> Kirim pesan
+            </button>
+            <p id="contactFormStatus" role="status"></p>
+          </form>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- ==========================================
+       FOOTER SECTION
+  =========================================== -->
+  <footer>
+    © 2026 Sandi Pratama. Dibuat dengan border tebal dan bayangan keras.
+  </footer>
+
+  <!-- ==========================================
+       MODAL PRATINJAU GAMBAR & SERTIFIKAT
+  =========================================== -->
+  <div id="previewModal" role="dialog" aria-modal="true" aria-label="Pratinjau">
+    <div class="box nb">
+      <button class="btn x" id="modalCloseButton" aria-label="Tutup">
+        <i class="ri-close-line"></i>
+      </button>
+      <button class="btn nv pv" id="modalPrevButton" aria-label="Sebelumnya">
+        <i class="ri-arrow-left-s-line"></i>
+      </button>
+      <div class="modal-img-wrap" id="modalImageViewport">
+        <img id="modalPreviewImage" alt="" draggable="false">
+      </div>
+      <div class="modal-zoom-bar" id="modalZoomControls" aria-label="Kontrol perbesaran sertifikat">
+        <button type="button" class="btn sm zoom-btn" id="zoomOutButton" aria-label="Perkecil" title="Perkecil (-)">
+          <i class="ri-zoom-out-line"></i>
+        </button>
+        <span class="zoom-level" id="zoomLevelDisplay">100%</span>
+        <button type="button" class="btn sm zoom-btn" id="zoomInButton" aria-label="Perbesar" title="Perbesar (+)">
+          <i class="ri-zoom-in-line"></i>
+        </button>
+        <button type="button" class="btn sm zoom-btn" id="zoomResetButton" aria-label="Reset ukuran" title="Reset Zoom (100%)">
+          <i class="ri-restart-line"></i> Reset
+        </button>
+      </div>
+      <div class="modal-meta">
+        <span class="modal-counter" id="modalSlideCounter"></span>
+        <p id="modalPreviewCaption"></p>
+      </div>
+      <div class="modal-thumbs" id="modalThumbnails"></div>
+      <button class="btn nv nx" id="modalNextButton" aria-label="Berikutnya">
+        <i class="ri-arrow-right-s-line"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- AOS Library & Script Utama -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
