@@ -210,60 +210,76 @@ const SKILLS_DATA = [
 // Data Pelatihan Section & Ikon Kategori Filter
 const TRAINING_CATEGORY_ICONS = {
   'Semua': 'ri-apps-2-line',
+  'Sertifikasi': 'ri-award-line',
   'Bootcamp': 'ri-rocket-2-line',
   'Pelatihan': 'ri-award-line',
-  'Workshop': 'ri-tools-line',
-  'Kursus Online': 'ri-computer-line'
+  'Online Course': 'ri-computer-line'
 };
 
 const TRAINING_DATA = [
   {
     type: 'Bootcamp',
-    title: 'Full-Stack Web Developer Bootcamp',
-    organizer: 'Akademi Digital Contoh',
-    duration: 'Mar – Jun 2025 · 12 minggu',
-    description: 'Membangun aplikasi web end-to-end sebagai proyek akhir bersama tim.',
-    topics: ['Laravel', 'MySQL', 'Git']
+    title: 'Microsoft Office Excel, Word, and PowerPoint Specialist',
+    organizer: 'KarirNex by PT Ebiz Karisma Internasional',
+    duration: 'Oktober 2026',
+    description: 'Pelatihan Microsoft Office yang mencakup pengolahan dan analisis data menggunakan Excel, pembuatan dashboard interaktif, otomatisasi dengan VBA, serta penyusunan dokumen dan presentasi menggunakan Word dan PowerPoint.',
+    topics: ['Microsoft Excel', 'Data Analysis', 'Pivot Table & Dashboard', 'VLOOKUP & INDEX MATCH', 'Macro VBA', 'Microsoft Word', 'Microsoft PowerPoint']
+  },
+  {
+    type: 'Online Course',
+    title: 'Short Class: Data Science Introduction',
+    organizer: 'MySkill.id',
+    duration: 'Oktober 2026',
+    description: 'Pengenalan dasar data science, meliputi pengumpulan dan penyimpanan data, persiapan data, penghapusan data duplikat, serta penanganan missing value untuk meningkatkan kualitas data.',
+    topics: ['Data Science', 'Data Collection', 'Data Preparation', 'Data Cleaning', 'Missing Value Handling']
+  },
+  {
+    type: 'Sertifikasi',
+    title: 'Sertifikasi Kompetensi Database Administrator',
+    organizer: 'LSP Universitas Bina Sarana Informatika',
+    duration: 'Agustus 2026',
+    description: 'Kompetensi administrasi basis data melalui studi kasus Sistem Perpustakaan Kampus, meliputi perancangan database, pengolahan SQL, integrasi data, validasi kualitas data, dan pengaturan hak akses.',
+    topics: ['MySQL', 'SQL', 'Database Design', 'ERD & LRS', 'Data Integration', 'Data Quality', 'Backup & Recovery']
+  },
+  {
+    type: 'Online Course',
+    title: 'Belajar Laravel',
+    organizer: 'WPU Course',
+    duration: 'April – Juni 2026',
+    description: 'Pembelajaran pengembangan aplikasi web menggunakan Laravel, mencakup pengelolaan routing, database, autentikasi, serta penerapan arsitektur aplikasi untuk membangun web yang terstruktur.',
+    topics: ['Laravel', 'PHP', 'MySQL', 'MVC Architecture', 'Web Development']
+  },
+  {
+    type: 'Sertifikasi',
+    title: 'Sertifikasi Kompetensi Programmer',
+    organizer: 'LSP Universitas Bina Sarana Informatika',
+    duration: 'Februari 2026',
+    description: 'Kompetensi pengembangan perangkat lunak meliputi penulisan kode sesuai best practice, pemrograman terstruktur dan berorientasi objek, integrasi basis data, debugging, serta pengujian unit program.',
+    topics: ['Programming', 'OOP', 'Database', 'Debugging', 'Unit Testing', 'Best Practices']
   },
   {
     type: 'Bootcamp',
-    title: 'Data Engineering Dasar',
-    organizer: 'Pusat Pelatihan Contoh',
-    duration: 'Agu – Sep 2025 · 6 minggu',
-    description: 'Belajar membuat pipeline data sederhana dan merancang skema basis data.',
-    topics: ['SQL', 'PostgreSQL', 'ETL']
+    title: 'IT Bootcamp "Software Development"',
+    organizer: 'Universitas Bina Sarana Informatika',
+    duration: 'Mei 2024 | 2 hari',
+    description: 'Pelatihan pengembangan perangkat lunak yang berfokus pada pemahaman proses software development dan penerapan dasar pemrograman dalam membangun aplikasi.',
+    topics: ['Software Development', 'Programming', 'Problem Solving', 'Application Development']
+  },
+  {
+    type: 'Sertifikasi',
+    title: 'Sertifikasi Kompetensi Junior Web Developer',
+    organizer: 'BPPTIK Kementerian Kominfo',
+    duration: 'September 2023',
+    description: 'Kompetensi pengembangan web meliputi implementasi antarmuka pengguna, penulisan kode sesuai best practice, pemrograman terstruktur, pengelolaan file program, serta penggunaan library dan komponen yang tersedia.',
+    topics: ['Web Development', 'UI Implementation', 'Programming', 'Best Practices', 'Libraries & Components']
   },
   {
     type: 'Pelatihan',
-    title: 'Pelatihan Kompetensi Database Administrator',
-    organizer: 'Balai Latihan Kerja Contoh',
-    duration: 'Jan – Feb 2026 · 40 jam',
-    description: 'Persiapan uji kompetensi: instalasi, backup, recovery, dan keamanan basis data.',
-    topics: ['Backup &amp; recovery', 'Keamanan DB']
-  },
-  {
-    type: 'Workshop',
-    title: 'Workshop Optimasi Query Database',
-    organizer: 'Komunitas DB Indonesia',
-    duration: 'Nov 2025 · 2 hari',
-    description: 'Praktik membaca rencana eksekusi dan menambah indeks yang tepat.',
-    topics: ['Query tuning', 'Indexing']
-  },
-  {
-    type: 'Kursus Online',
-    title: 'Dasar Pemrograman Web',
-    organizer: 'Platform Belajar Contoh',
-    duration: '2024 · 30 jam',
-    description: 'Fondasi HTML, CSS, dan JavaScript lewat proyek kecil.',
-    topics: ['HTML', 'CSS', 'JavaScript']
-  },
-  {
-    type: 'Workshop',
-    title: 'Workshop Keamanan Aplikasi Web',
-    organizer: 'Himpunan Mahasiswa Contoh',
-    duration: 'Okt 2024 · 1 hari',
-    description: 'Mengenal celah umum seperti SQL injection dan XSS beserta pencegahannya.',
-    topics: ['OWASP', 'Validasi input']
+    title: 'Junior Web Developer Training',
+    organizer: 'Digital Talent Scholarship – Vocational School Graduate Academy (Kominfo)',
+    duration: 'Juli 2023',
+    description: 'Pelatihan pengembangan web yang mencakup implementasi antarmuka pengguna, pemrograman terstruktur, penulisan kode sesuai best practice, penggunaan library, serta pengelolaan sumber daya program.',
+    topics: ['Web Development', 'UI Implementation', 'Structured Programming', 'Best Practices', 'Libraries & Components']
   }
 ];
 

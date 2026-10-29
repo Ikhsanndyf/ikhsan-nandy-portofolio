@@ -743,6 +743,20 @@ blockquote {
 
 .tr p {
   color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.tr .chips {
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tr .chip {
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  border-width: 2px;
+  box-shadow: 2px 2px 0 var(--ink);
 }
 
 /* ==========================================
